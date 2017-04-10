@@ -1,0 +1,89 @@
+Project 1
+In this first project you will create a framework to scope out data science projects. This framework will provide you with a guide to develop a well-articulated problem statement and analysis plan that will be robust and reproducible.
+Read and evaluate the following problem statement:
+Determine which free-tier customers will covert to paying customers, using demographic data collected at signup (age, gender, location, and profession) and customer useage data (days since last log in, and activity score 1 = active user, 0= inactive user) based on Hooli data from Jan-Apr 2015.
+1. What is the outcome?
+
+Answer: Being able to predict which customers will be paying customers. 
+2. What are the predictors/covariates?
+
+since last log in and activity score). 
+Answer: Demographic data, such as age, gender, location and profession, and customer useage data, such as days since last log in and activity score). 
+3. What timeframe is this data relevent for?
+
+Answer: January 2015 to April 2015 - 3 months. 
+4. What is the hypothesis?
+
+r.
+Answer: Customers who are an active use (score of 1) will have the highest probability of becoming a paying customer.
+Let's get started with the ADMISSIONS dataset
+1. Create a data dictionary
+
+estige
+Answer: 
+​
+Variable | Description | Type of Variable
+---| ---| ---
+admit | 0 = not admitted 1 = admitted | categorical
+gre | numerical score on gre test 200-800 | continuous 
+gpa | numerical score for gpa 0-4.0 | continuous
+prestige | 1=not prestigious 2=low prestige 3=medium prestige 4=high prestige | categorical
+In [ ]:
+
+​
+
+ attended. 
+We would like to explore the association between admission into grad school and presitge of past university attended. 
+2. What is the outcome?
+
+choice of 
+Answer: admit, or choice of admission into grad school 
+3. What are the predictors/covariates?
+
+a, prestige 
+Answer: gre, gpa, prestige 
+4. What timeframe is this data relevent for?
+
+ators of the dataset. 
+Answer: It is uncertain. This is information that would need to be gathered from the originators of the dataset. 
+4. What is the hypothesis?
+
+Answer: Students with higher prestige scores will be more likely to be admitted into grad school. 
+Using the above information, write a well-formed problem statement. 
+Problem Statement
+Exploratory Analysis Plan
+Using the lab from a class as a guide, create an exploratory analysis plan.
+1. What are the goals of the exploratory analysis?
+
+Answer: 1. determine if there is any missing data; 2. examine the distributions of the variables to determine if any of the variables need be transformed 
+2a. What are the assumptions of the distribution of data?
+
+Answer: That they have a normal distribution 
+2b. How will you determine the distribution of your data?
+
+rmality 
+Answer: By creating histograms and testing for skewness, kurtosis and normality 
+3a. How might outliers impact your analysis?
+
+Answer: They may skew the analysis in the direction of the outlier, which may not be representative of the majority of the data. 
+3b. How will you test for outliers?
+
+Answer: Create box plots. 
+4a. What is colinearity?
+
+Answer: When one variable is a function of another variable and are capturing similar variance. 
+4b. How will you test for colinearity?
+
+Answer: Create scatter plots to test for correlation or create a correlation matrix. 
+5. What is your exploratory analysis plan?
+Using the above information, write an exploratory analysis plan that would allow you or a colleague to reproduce your analysis 1 year from now.
+
+Answer: 1. check for missing data and remove observations that are missing data; 2. check for colinearity by testing correlation of different variables; 3. check for normal districtuion by creating histograms and understanding the skew and kurtosis of the data, if it exists. 
+Bonus Questions:
+Outline your analysis method for predicting your outcome
+Write an alternative problem statement for your dataset
+Articulate the assumptions and risks of the alternative model
+
+1. My analysis method would be determined on what variable had the best correlation with admit. I would test this by understanding the correlation and figuring out which variable may have the greatest influence on admit. Once I found that, I would be able to predict to a certain extent what kind of candidate would be admitted based on gpa, gre, or prestige score. Ideally, I'd also want to find out what are the thresholds for those indiviual variables that determine admit. Perhaps GRE needs to be above 600 desptie high GPA and Prestige scores, but above that doesn't matter as much. That would throw off the overall correlation of the data, but still be important. To do this, I would test different cross-sections of the dataset. 
+2. Students with GRE scores <600 are more likely to gain admittance into grad school. 
+3. Assumptions: This alternative model also assumes normality. The dataset may not be normally distributed or candidates may be self-selecting on some other criteria not captured by the model. Risks: This new problem statement may be too broad a parameter and not glean the sharpest insights about the admit outcome. 
